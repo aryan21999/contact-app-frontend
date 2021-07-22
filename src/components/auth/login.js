@@ -15,7 +15,7 @@ const Login = props => {
     }
     
     if(error==='Invalid credentials'){
-      setAlert(error,'danger');
+      setAlert(error,'require');
       clearErrors();
     }
     //eslint-disable-next-line
@@ -33,7 +33,7 @@ const Login = props => {
   const onSubmit = e => {
     e.preventDefault();
     if(email === ''|| password ===''){
-      setAlert('Please fill all fields','danger');
+      setAlert('Please fill all fields','require');
     }else{
       loginUser({email,password});
     }

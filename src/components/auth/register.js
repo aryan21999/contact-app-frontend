@@ -14,7 +14,7 @@ const Register = props => {
     }
     
     if(error==='User already exists'){
-      setAlert(error,'danger');
+      setAlert(error,'require');
       clearErrors();
     }
     //eslint-disable-next-line
@@ -33,9 +33,9 @@ const Register = props => {
   const onSubmit = e => {
     e.preventDefault();
     if (name === '' || email === '' || password === '') {
-      setAlert('Please enter all fields', 'danger');
+      setAlert('Please enter all fields', 'require');
     } else if (password !== password2) {
-      setAlert('Passwords must match', 'danger');
+      setAlert('Passwords must match', 'require');
     } else {
       register({ name, email, password });
     }
